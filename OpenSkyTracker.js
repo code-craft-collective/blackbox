@@ -8,7 +8,6 @@ const app = express();
 
 app.use(express.json());
 
-// Route to handle the /states/all endpoint
 app.get("/states/all", async (req, res) => {
   try {
     const { time, icao24, lamin, lomin, lamax, lomax, extended } = req.query;

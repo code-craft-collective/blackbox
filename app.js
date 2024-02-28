@@ -7,6 +7,7 @@ const cors = require("cors");
 const PORT = 5005;
 
 const app = express();
+app.use("/api", require("./routes/plane.routes"));
 
 mongoose
   .connect("mongodb://localhost:27017/Plane", {})
@@ -24,6 +25,9 @@ app.get("/", (req, res) => {
   res.send("Hello, this is your Express server!");
 });
 
+app.get("/api/flights", (req, res) => {
+  plane.find({}).then(Plane);
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
