@@ -1,20 +1,23 @@
-const mongoose = require('mongoose');
 const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
-const fetchFlightsRoutes = require('./fetchFlights');
+// to use .env file
+require('dotenv').config();
 
-const PORT = 5005;
+// all the db related code is moved to db.js
+const db = require('./db');
+
+// services for flights and user
+const flightRoutes = require('./services/flights');
+
+const PORT = process.env.PORT || 5005;
 
 const app = express();
 
-const nameOfDatabase = 'flights-api';
-mongoose
-  .connect(`mongodb://localhost:27017/${nameOfDatabase}`, {})
-  .then((x) => console.log(`Connected to Database: "${x.connections[0].name}"`))
-  .catch((err) => console.error('Error connecting to MongoDB', err));
+// Connect to the database
+db.connect();
 
 // MIDDLEWARE
 // Research Team - Set up CORS middleware here:
@@ -26,15 +29,26 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
-// using prefix routes, that is imported from fetchFlights.js
-// end point will be /api/flights --> to get all flights
-app.use('/api', fetchFlightsRoutes);
-
+// just a dummy sample route that will be deleted later
 app.get('/', (req, res) => {
   res.send('Hello, this is your Express server!');
 });
 
+// using prefix routes, that is imported from fetchFlights.js
+// end point will be /api/flights --> to get all flights
+app.use('/api/flights', flightRoutes);
+
+// create a new entry route for user below
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(500).json({ error: 'Internal Server Error' });
+});
+
 // port where server is running
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = server;

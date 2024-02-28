@@ -6,12 +6,12 @@ const router = express.Router();
 
 // this is the model we get from the schema
 // and this we will use it to fetch the data from the database
-const Flight = require('./models/Flight.model');
+const Flight = require('../models/Flight.model');
 
 // this is the mock data we are using
-const flightJson = require('./flights.json');
+const flightJson = require('../flights.json');
 
-router.get('/flights', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // we are using the model to get the data from the database
     // uncomment 2 lines below if you want to fetch the data from the DB
