@@ -1,7 +1,6 @@
-/****
+/** **
  * Fred will fix all this messy code
  * 
- * /
 
 const Plane = require("../models/Destination.model.js");
 const mongoose = require("mongoose");
@@ -92,3 +91,5 @@ router.post("/destinations", (req, res, next) => {
         .json({ error: "Failed to create new destination", details: err });
     });
 });
+
+ **** */

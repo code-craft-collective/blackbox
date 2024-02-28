@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
-//using prefix routes, that is imported from fetchFlights.js
+// using prefix routes, that is imported from fetchFlights.js
 // end point will be /api/flights --> to get all flights
 app.use('/api', fetchFlightsRoutes);
 

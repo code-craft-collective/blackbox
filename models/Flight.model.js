@@ -1,7 +1,8 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
 
-//flight is suitable name than plane
+const { Schema } = mongoose;
+
+// flight is suitable name than plane
 const flightSchema = new Schema({
   flightNumber: Number,
   airline: String,
@@ -14,9 +15,9 @@ const flightSchema = new Schema({
 });
 
 // as you can see the third argument is the name of the collection
-//is the DB, if it is not there it will create a collection with the
+// is the DB, if it is not there it will create a collection with the
 // name of the model in plural
-const nameOfCollection = "flights";
-const Flight = mongoose.model("Flight", flightSchema, nameOfCollection);
+const nameOfCollection = 'flights';
+const Flight = mongoose.model('Flight', flightSchema, nameOfCollection);
 
 module.exports = Flight;
