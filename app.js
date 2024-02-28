@@ -4,13 +4,15 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
+const fetchFlightsRoutes = require("./fetchFlights");
+
 const PORT = 5005;
 
 const app = express();
-app.use("/api", require("./routes/plane.routes"));
 
+const nameOfDatabase = "flights-api";
 mongoose
-  .connect("mongodb://localhost:27017/Plane", {})
+  .connect(`mongodb://localhost:27017/${nameOfDatabase}`, {})
   .then((x) => console.log(`Connected to Database: "${x.connections[0].name}"`))
   .catch((err) => console.error("Error connecting to MongoDB", err));
 
@@ -21,13 +23,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
 
+//using prefix routes, that is imported from fetchFlights.js
+// end point will be /api/flights --> to get all flights
+app.use("/api", fetchFlightsRoutes);
+
 app.get("/", (req, res) => {
   res.send("Hello, this is your Express server!");
 });
 
-app.get("/api/flights", (req, res) => {
-  plane.find({}).then(Plane);
-});
+// port where server is running
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

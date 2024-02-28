@@ -1,3 +1,8 @@
+/****
+ * Fred will fix all this messy code
+ * 
+ * /
+
 const Plane = require("../models/Destination.model.js");
 const mongoose = require("mongoose");
 const router = require("express").Router();

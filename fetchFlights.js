@@ -1,38 +1,28 @@
+// we need the Router() method of the express module
+// to create new route handlers
 const express = require("express");
-const mongoose = require("mongoose");
+const router = express.Router();
 
-const app = express();
-const port = 5005;
+//this is the model we get from the schema
+// and this we will use it to fetch the data from the database
+const Flight = require("./models/Flight.model");
 
-const uri = "mongodb://localhost:27017/plane";
+//this is the mock data we are using
+const flightJson = require("./flights.json");
 
-app.use(express.json());
-
-/*async function connectToMongoDB() {
+router.get("/flights", async (req, res) => {
   try {
-    await client.connect();
-    console.log("Connected to MongoDB");
-  } catch (error) {
-    console.error("Error connecting to MongoDB:", error);
-  }
-} */
+    //we are using the model to get the data from the database
+    //uncomment 2 lines below if you want to fetch the data from the DB
+    const flights = await Flight.find({});
+    res.status(200).json(flights);
 
-app.get("/api/flights", async (req, res) => {
-  try {
-    const database = client.db("mongodb://localhost:27017/plane");
-    const collection = database.collection("flights");
-    const flights = await collection.find({}).toArray();
-    res.json(flights);
+    //we are using the json file to get the mock data
+    // res.status(200).json(flightJson);
   } catch (error) {
     console.error("Error fetching flights:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
-/* connectToMongoDB().then(() => {
-  app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-  });
-}); */
-
-module.exports = app;
+module.exports = router;

@@ -1,3 +1,10 @@
+/****
+ * Fred, you need to re write all these code because it is not
+ * correct.
+ *
+ * We will do pair programming and walk throught it together.
+ * *******/
+
 const express = require("express");
 const axios = require("axios");
 
