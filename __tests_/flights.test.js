@@ -4,25 +4,53 @@ const app = require('../app');
 
 require('dotenv').config();
 
-//mocking test pretending the test to return an empty array
-jest.mock('../app', () => {
-  const express = require('express');
-  const app = express();
-
-  app.get('/flights', (req, res) => {
-    res.json([]); // Return an empty array
+describe('Test the /api/flights/all route', () => {
+  test('It should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/all');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
   });
-  return app;
-});
 
-describe('GET /flights', () => {
-  it('should return a list of flights', async () => {
-    const res = await request(app)
-      .get('/flights')
-      .expect('Content-Type', /json/)
-      .expect(200);
+  test('GET /destination should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/destination');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
+  });
 
-    expect(Array.isArray(res.body)).toBeTruthy();
+  test('GET /airline should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/airline');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
+  });
+
+  test('GET /price should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/price');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
+  });
+
+  test('GET /departureTime should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/departureTime');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
+  });
+
+  test('GET /arrivalTime should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/arrivalTime');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
   });
 });
 

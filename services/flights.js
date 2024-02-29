@@ -28,14 +28,9 @@ router.get('/all', async (req, res) => {
 
 router.get('/destination', async (req, res) => {
   try {
-    // we are using the model to get the data from the database
-    // uncomment 2 lines below if you want to fetch the data from the DB
     const flights = await Flight.find({}).select('destination');
 
     res.status(200).json(flights);
-
-    // we are using the json file to get the mock data
-    // res.status(200).json(flightJson);
   } catch (error) {
     console.error('Error fetching flights:', error);
     res.status(500).json({ error: 'Internal Server Error' });
