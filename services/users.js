@@ -1,15 +1,12 @@
-const Flight = require('../models/Flight.model');
+// we need the Router() method of the express module
+// to create new route handlers
+const express = require('express');
 
-async function getFlights() {
-  try {
-    const flights = await Flight.find({});
-    return flights;
-  } catch (error) {
-    console.error('Error fetching flights:', error);
+const router = express.Router();
 
-    // return error to be caught by the caller
-    return { error: 'Internal Server Error' };
-  }
-}
+// the model does not exist yet, please create the model
+// const User = require('../models/User.model');
 
-module.exports = { getFlights };
+// user endpoints
+
+module.exports = router;
