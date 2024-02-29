@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const nameOfDatabase = 'flights-api';
+const nameOfDatabase = 'Plane';
 
 async function connect() {
   try {

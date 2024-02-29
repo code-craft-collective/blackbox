@@ -1,4 +1,4 @@
-const Flight = require('./models/Flight.model');
+const Flight = require('../models/Flight.model');
 
 async function getFlights() {
   try {
