@@ -1,30 +1,35 @@
 [
   {
     "username": "john_doe",
+    "password": "john_doe123",
     "email": "john@example.com",
     "bio": "I'm a software developer.",
     "image": "john.jpg"
   },
   {
     "username": "jane_smith",
+    "password": "jane_smith123",
     "email": "jane@example.com",
     "bio": "Explorer and adventurer.",
     "image": "jane.jpg"
   },
   {
     "username": "alex_carter",
+    "password": "alex_carter123",
     "email": "alex@example.com",
     "bio": "Photographer and nature lover.",
     "image": "alex.jpg"
   },
   {
     "username": "emma_watson",
+    "password": "emma_watson123",
     "email": "emma@example.com",
     "bio": "Bookworm and aspiring writer.",
     "image": "emma.jpg"
   },
   {
     "username": "samuel_jackson",
+    "password": "samuel_jackson123",
     "email": "samuel@example.com",
     "bio": "Actor and film producer.",
     "image": "samuel.jpg"
