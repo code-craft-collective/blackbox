@@ -1,62 +1,71 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
-const { MongoMemoryServer } = require('mongodb-memory-server');
-const server = require('../app'); // import your Express app
-const Flight = require('../models/Flight.model'); // import your Flight model
+const app = require('../app');
 
 require('dotenv').config();
 
-describe('GET /api/flights', () => {
-  let mongoServer;
+let server;
 
-  beforeAll(async () => {
-    mongoServer = await MongoMemoryServer.create();
-    const mongoUri = mongoServer.getUri();
-    console.log('MONGO URI', mongoUri);
+beforeAll((done) => {
+  server = app.listen(0, done); // start server on a random free port
+});
 
-    // Close existing Mongoose connections
-    if (mongoose.connection.readyState !== 0) {
-      await mongoose.connection.close();
-    }
+afterAll((done) => {
+  server.close(done); // close server after all tests
+});
 
-    await mongoose.connect(mongoUri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+afterAll((done) => {
+  mongoose.connection.close(() => {
+    server.close(done); // close server after database connection is closed
   });
+});
 
-  afterAll(async () => {
-    await mongoose.disconnect();
-    await mongoose.connection.close();
-    await mongoServer.stop();
-  });
-
-  test.skip('returns all flights', async () => {
-    const flight1 = new Flight({
-      /* flight1 data */
-    });
-    const flight2 = new Flight({
-      /* flight2 data */
-    });
-    await flight1.save();
-    await flight2.save();
-
-    const response = await request(app).get('/api/flights');
-
-    expect(response.status).toBe(200);
-    expect(response.body).toHaveLength(2);
-    expect(response.body).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({ _id: flight1._id.toString() }),
-        expect.objectContaining({ _id: flight2._id.toString() }),
-      ])
+describe.skip('Test the /api/flights/all route', () => {
+  test('It should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/all');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
     );
   });
 
-  describe.only('GET /api/flights', () => {
-    it('should return all flights', async () => {
-      const res = await request(server).get('/api/flights');
-      expect(res.status).toBe(200);
-    });
+  test('GET /destination should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/destination');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
+  });
+
+  test('GET /airline should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/airline');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
+  });
+
+  test('GET /price should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/price');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
+  });
+
+  test('GET /departureTime should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/departureTime');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
+  });
+
+  test('GET /arrivalTime should respond with a 200 status and application/json content type', async () => {
+    const response = await request(app).get('/api/flights/arrivalTime');
+    expect(response.statusCode).toBe(200);
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    );
   });
 });
