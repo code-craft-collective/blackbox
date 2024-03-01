@@ -1,0 +1,32 @@
+[
+  {
+    "username": "john_doe",
+    "email": "john@example.com",
+    "bio": "I'm a software developer.",
+    "image": "john.jpg"
+  },
+  {
+    "username": "jane_smith",
+    "email": "jane@example.com",
+    "bio": "Explorer and adventurer.",
+    "image": "jane.jpg"
+  },
+  {
+    "username": "alex_carter",
+    "email": "alex@example.com",
+    "bio": "Photographer and nature lover.",
+    "image": "alex.jpg"
+  },
+  {
+    "username": "emma_watson",
+    "email": "emma@example.com",
+    "bio": "Bookworm and aspiring writer.",
+    "image": "emma.jpg"
+  },
+  {
+    "username": "samuel_jackson",
+    "email": "samuel@example.com",
+    "bio": "Actor and film producer.",
+    "image": "samuel.jpg"
+  }
+]
