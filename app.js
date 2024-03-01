@@ -45,7 +45,7 @@ app.use('/api/users', usersRoutes);
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err);
-  res.status(500).json({ error: 'Internal Server Error' });
+  res.status(404).json({ error: 'Not found' });
 });
 
 let server;
@@ -57,4 +57,4 @@ if (process.env.NODE_ENV !== 'test') {
   });
 }
 
-module.exports = server;
+module.exports = app;

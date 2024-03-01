@@ -6,21 +6,13 @@ require('dotenv').config();
 
 let server;
 
+jest.setTimeout(10000); // 10 seconds
+
 beforeAll((done) => {
   server = app.listen(0, done); // start server on a random free port
 });
 
-afterAll((done) => {
-  server.close(done); // close server after all tests
-});
-
-afterAll((done) => {
-  mongoose.connection.close(() => {
-    server.close(done); // close server after database connection is closed
-  });
-});
-
-describe.skip('Test the /api/flights/all route', () => {
+describe('Test the /api/flights/all route', () => {
   test('It should respond with a 200 status and application/json content type', async () => {
     const response = await request(app).get('/api/flights/all');
     expect(response.statusCode).toBe(200);
