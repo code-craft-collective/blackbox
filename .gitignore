@@ -1,7 +1,7 @@
 # Dependency directory
 node_modules
 
-#testing
+# test
 coverage
 
 # Debug log from npm

@@ -1,0 +1,52 @@
+[
+  {
+    "flightNumber": "ABC123",
+    "airline": "Airline A",
+    "destination": "New York",
+    "departureTime": "2024-03-01T08:00:00",
+    "arrivalTime": "2024-03-01T12:00:00",
+    "seatAvailability": 150,
+    "bookedSeats": [],
+    "price": 300
+  },
+  {
+    "flightNumber": "XYZ789",
+    "airline": "Airline B",
+    "destination": "London",
+    "departureTime": "2024-03-02T10:00:00",
+    "arrivalTime": "2024-03-02T15:30:00",
+    "seatAvailability": 120,
+    "bookedSeats": [],
+    "price": 400
+  },
+  {
+    "flightNumber": "DEF456",
+    "airline": "Airline C",
+    "destination": "Tokyo",
+    "departureTime": "2024-03-03T12:30:00",
+    "arrivalTime": "2024-03-04T02:00:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 550
+  },
+  {
+    "flightNumber": "GHI789",
+    "airline": "Airline D",
+    "destination": "Paris",
+    "departureTime": "2024-03-04T15:45:00",
+    "arrivalTime": "2024-03-04T20:30:00",
+    "seatAvailability": 100,
+    "bookedSeats": [],
+    "price": 350
+  },
+  {
+    "flightNumber": "JKL012",
+    "airline": "Airline E",
+    "destination": "Sydney",
+    "departureTime": "2024-03-05T18:20:00",
+    "arrivalTime": "2024-03-06T08:45:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 600
+  }
+]
