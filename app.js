@@ -12,6 +12,7 @@ const db = require('./db');
 // services for flights and user
 const flightRoutes = require('./services/flights');
 const userRoutes = require('./services/users');
+const authRoutes = require('./routes/auth.routes');
 
 const PORT = process.env.PORT || 5005;
 
@@ -42,6 +43,7 @@ app.use('/api/flights', flightRoutes);
 // create a new entry route for user below
 app.use('/api/users', userRoutes);
 
+app.use('/auth', authRoutes);
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err);
