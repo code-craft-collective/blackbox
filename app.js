@@ -7,8 +7,6 @@ const cors = require('cors');
 // to use .env file
 require('dotenv').config();
 
-// all the db related code is moved to db.js
-const db = require('./db');
 
 // services for flights and user
 const flightRoutes = require('./services/flights');
@@ -17,9 +15,6 @@ const usersRoutes = require('./services/users');
 const PORT = process.env.PORT || 5005;
 
 const app = express();
-
-// Connect to the database
-db.connect();
 
 // MIDDLEWARE
 // Research Team - Set up CORS middleware here:
@@ -48,14 +43,5 @@ app.use((err, req, res, next) => {
   console.error(err);
   res.status(404).json({ error: 'Not found' });
 });
-
-let server;
-
-// port where server is running
-if (process.env.NODE_ENV !== 'test') {
-  server = server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-}
 
 module.exports = app;

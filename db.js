@@ -5,6 +5,7 @@ const nameOfDatabase = 'Plane';
 async function connect() {
   try {
     await mongoose.connect(`mongodb://localhost:27017/${nameOfDatabase}`, {});
+    console.log('Connected to MongoDB');
     console.log(`Connected to Database: "${nameOfDatabase}"`);
   } catch (error) {
     console.error('Error connecting to MongoDB', error);
