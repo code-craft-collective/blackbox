@@ -1,16 +1,11 @@
+/* eslint-disable no-undef */
 const request = require('supertest');
 const app = require('../app'); // adjust the path as needed
+const { setup, teardown, cleanup } = require('./testSetup');
 
 describe('Express application', () => {
-  let server;
-
-  beforeAll((done) => {
-    server = app.listen(0, done); // start server on a random free port
-  });
-
-  afterAll(async () => {
-    await server.close(); // close server after all tests
-  });
+  beforeAll(setup);
+  afterAll(teardown);
 
   test('GET / should respond with a greeting', async () => {
     const response = await request(app).get('/');

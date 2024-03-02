@@ -9,6 +9,7 @@ const router = express.Router();
 const Flight = require('../models/Flight.model');
 
 // this is the mock data we are using
+// eslint-disable-next-line no-unused-vars
 const flightJson = require('../flights.json');
 
 router.get('/all', async (req, res) => {

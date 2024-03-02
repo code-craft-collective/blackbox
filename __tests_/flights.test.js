@@ -1,18 +1,22 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 const request = require('supertest');
-const mongoose = require('mongoose');
 const app = require('../app');
+const mongoose = require('mongoose');
+const { MongoMemoryServer } = require('mongodb-memory-server');
+const { afterEach } = require('node:test');
+const { setup, teardown, cleanup } = require('./testSetup');
 
 require('dotenv').config();
 
-let server;
-
 jest.setTimeout(10000); // 10 seconds
 
-beforeAll((done) => {
-  server = app.listen(0, done); // start server on a random free port
-});
+beforeAll(setup);
+afterAll(teardown);
 
 describe('Test the /api/flights/all route', () => {
+  afterEach(cleanup);
+
   test('It should respond with a 200 status and application/json content type', async () => {
     const response = await request(app).get('/api/flights/all');
     expect(response.statusCode).toBe(200);
