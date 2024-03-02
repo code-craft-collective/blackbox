@@ -14,6 +14,7 @@ async function setup() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+    isMongooseConnected = true;
     server = app.listen(0); // start server on a random free port
   } catch (error) {
     console.error('Error during setup:', error);
