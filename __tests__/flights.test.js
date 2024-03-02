@@ -37,54 +37,96 @@ const mockFlights = [
   },
 ];
 
-const mockDestination = [
-  { destination: 'Paris' },
-  { destination: 'London' },
-  { destination: 'New York' },
-  // add more mock flights as needed
+const mockReturnDataFromSingleEndpoint = [
+  { someKey: 'someValue' },
+  { someKey: 'someValue' },
+  { someKey: 'someValue' },
 ];
 
-const testCases = [
-  {
-    mockFlights,
-    expectedStatus: 200,
-    expectedContentType: 'json',
-    expectedBody: mockFlights,
-    endPoint: '/api/flights/all',
-  },
-  {
-    mockFlights,
-    expectedStatus: 200,
-    expectedContentType: 'json',
-    expectedBody: mockDestination,
-    endPoint: '/api/flights/destination',
-  },
-];
+describe('Test the /api/flights route', () => {
+  describe('GET /api/flights/all', () => {
+    test('It should respond with a 200 status and application/json content type', async () => {
+      Flight.find.mockResolvedValue(mockFlights);
+      const response = await request(app).get('/api/flights/all');
+      expect(response.statusCode).toBe(200);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
+  });
 
-describe('Test the /api/flights/all route', () => {
-  test.each(testCases)(
-    'it should respond with 200 status and application/json content type',
-    async (testCase) => {
+  describe('GET /api/flights/destination', () => {
+    test('It should respond with a 200 status and application/json content type', async () => {
       Flight.find.mockImplementation(() => {
         return {
-          select: jest.fn().mockResolvedValue(mockFlights),
+          select: jest.fn().mockResolvedValue(mockReturnDataFromSingleEndpoint),
         };
       });
-      const response = await request(app).get(testCase.endPoint);
-      expect(response.statusCode).toBe(testCase.expectedStatus);
+      const response = await request(app).get('/api/flights/destination');
+      expect(response.statusCode).toBe(200);
       expect(response.headers['content-type']).toEqual(
-        expect.stringContaining(testCase.expectedContentType)
+        expect.stringContaining('json')
       );
-      // expect(response.body).toEqual(testCase.expectedBody);
-    }
-  );
+    });
+  });
 
-  test('It should respond with a 200 status and application/json content type', async () => {
-    Flight.find.mockResolvedValue(mockFlights);
-    const response = await request(app).get('/api/flights/all');
-    expect(response.statusCode).toBe(200);
-    expect(response.headers['content-type']).toEqual(
-      expect.stringContaining('json')
-    );
+  describe('GET /api/flights/airline', () => {
+    test('It should respond with a 200 status and application/json content type', async () => {
+      Flight.find.mockImplementation(() => {
+        return {
+          select: jest.fn().mockResolvedValue(mockReturnDataFromSingleEndpoint),
+        };
+      });
+      const response = await request(app).get('/api/flights/airline');
+      expect(response.statusCode).toBe(200);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
+  });
+
+  describe('GET /api/flights/price', () => {
+    test('It should respond with a 200 status and application/json content type', async () => {
+      Flight.find.mockImplementation(() => {
+        return {
+          select: jest.fn().mockResolvedValue(mockReturnDataFromSingleEndpoint),
+        };
+      });
+      const response = await request(app).get('/api/flights/price');
+      expect(response.statusCode).toBe(200);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
+  });
+
+  describe('GET /api/flights/departureTime', () => {
+    test('It should respond with a 200 status and application/json content type', async () => {
+      Flight.find.mockImplementation(() => {
+        return {
+          select: jest.fn().mockResolvedValue(mockReturnDataFromSingleEndpoint),
+        };
+      });
+      const response = await request(app).get('/api/flights/departureTime');
+      expect(response.statusCode).toBe(200);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
+  });
+
+  describe('GET /api/flights/arrivalTime', () => {
+    test('It should respond with a 200 status and application/json content type', async () => {
+      Flight.find.mockImplementation(() => {
+        return {
+          select: jest.fn().mockResolvedValue(mockReturnDataFromSingleEndpoint),
+        };
+      });
+      const response = await request(app).get('/api/flights/arrivalTime');
+      expect(response.statusCode).toBe(200);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
   });
 });
