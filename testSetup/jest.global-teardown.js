@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 async function teardown() {
   try {
-    console.log('disconnect aboout to start');
     await mongoose.disconnect();
     await global.mongoServer.stop();
     if (global.server) {

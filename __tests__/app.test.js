@@ -3,7 +3,6 @@ const request = require('supertest');
 const app = require('../app'); // adjust the path as needed
 
 describe('Express application', () => {
-
   test('GET / should respond with a greeting', async () => {
     const response = await request(app).get('/');
     expect(response.statusCode).toBe(200);

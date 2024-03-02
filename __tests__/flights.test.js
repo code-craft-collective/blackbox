@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 const request = require('supertest');
 const app = require('../app');
 const Flight = require('../models/Flight.model');
@@ -53,6 +52,21 @@ describe('Test the /api/flights route', () => {
         expect.stringContaining('json')
       );
     });
+
+    test('it should respond with the correct data', async () => {
+      Flight.find.mockResolvedValue(mockFlights);
+      const response = await request(app).get('/api/flights/all');
+      expect(response.body).toEqual(mockFlights);
+    });
+
+    test('it should respond with a 500 status and application/json content type if an error occurs', async () => {
+      Flight.find.mockRejectedValue(new Error('Error fetching flights'));
+      const response = await request(app).get('/api/flights/all');
+      expect(response.statusCode).toBe(500);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
   });
 
   describe('GET /api/flights/destination', () => {
@@ -64,6 +78,19 @@ describe('Test the /api/flights route', () => {
       });
       const response = await request(app).get('/api/flights/destination');
       expect(response.statusCode).toBe(200);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
+
+    test('It should respond with a 500 status and application/json content type if an error occurs', async () => {
+      Flight.find.mockReturnValue({
+        select: jest
+          .fn()
+          .mockRejectedValue(new Error('Error fetching flights')),
+      });
+      const response = await request(app).get('/api/flights/destination');
+      expect(response.statusCode).toBe(500);
       expect(response.headers['content-type']).toEqual(
         expect.stringContaining('json')
       );
@@ -83,6 +110,19 @@ describe('Test the /api/flights route', () => {
         expect.stringContaining('json')
       );
     });
+
+    test('It should respond with a 500 status and application/json content type if an error occurs', async () => {
+      Flight.find.mockReturnValue({
+        select: jest
+          .fn()
+          .mockRejectedValue(new Error('Error fetching airline data')),
+      });
+      const response = await request(app).get('/api/flights/airline');
+      expect(response.statusCode).toBe(500);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
   });
 
   describe('GET /api/flights/price', () => {
@@ -94,6 +134,19 @@ describe('Test the /api/flights route', () => {
       });
       const response = await request(app).get('/api/flights/price');
       expect(response.statusCode).toBe(200);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
+
+    test('It should respond with a 500 status and application/json content type if an error occurs', async () => {
+      Flight.find.mockReturnValue({
+        select: jest
+          .fn()
+          .mockRejectedValue(new Error('Error fetching price data')),
+      });
+      const response = await request(app).get('/api/flights/price');
+      expect(response.statusCode).toBe(500);
       expect(response.headers['content-type']).toEqual(
         expect.stringContaining('json')
       );
@@ -113,6 +166,19 @@ describe('Test the /api/flights route', () => {
         expect.stringContaining('json')
       );
     });
+
+    test('It should respond with a 500 status and application/json content type if an error occurs', async () => {
+      Flight.find.mockReturnValue({
+        select: jest
+          .fn()
+          .mockRejectedValue(new Error('Error fetching departureTime data')),
+      });
+      const response = await request(app).get('/api/flights/departureTime');
+      expect(response.statusCode).toBe(500);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
   });
 
   describe('GET /api/flights/arrivalTime', () => {
@@ -124,6 +190,18 @@ describe('Test the /api/flights route', () => {
       });
       const response = await request(app).get('/api/flights/arrivalTime');
       expect(response.statusCode).toBe(200);
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      );
+    });
+    test('It should respond with a 500 status and application/json content type if an error occurs', async () => {
+      Flight.find.mockReturnValue({
+        select: jest
+          .fn()
+          .mockRejectedValue(new Error('Error fetching arrival time data')),
+      });
+      const response = await request(app).get('/api/flights/arrivalTime');
+      expect(response.statusCode).toBe(500);
       expect(response.headers['content-type']).toEqual(
         expect.stringContaining('json')
       );
