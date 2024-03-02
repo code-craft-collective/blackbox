@@ -1,11 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-unused-expressions */
 const mongoose = require('mongoose');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const app = require('../app');
 
 global.server;
 global.mongoServer;
-
-let isMongooseConnected = false;
 
 async function setup() {
   try {
@@ -17,7 +17,6 @@ async function setup() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    isMongooseConnected = true;
     global.server = app.listen(0); // start server on a random free port
   } catch (error) {
     console.error('Error during setup:', error);

@@ -7,7 +7,6 @@ const cors = require('cors');
 // to use .env file
 require('dotenv').config();
 
-
 // services for flights and user
 const flightRoutes = require('./services/flights');
 const usersRoutes = require('./services/users');
