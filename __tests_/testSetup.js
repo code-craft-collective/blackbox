@@ -5,6 +5,8 @@ const app = require('../app');
 let server;
 let mongoServer;
 
+let isMongooseConnected = false;
+
 async function setup() {
   try {
     mongoServer = new MongoMemoryServer();

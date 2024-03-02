@@ -11,7 +11,7 @@ require('dotenv').config();
 
 jest.setTimeout(10000); // 10 seconds
 
-beforeAll(setup);
+// beforeAll(setup);
 afterAll(teardown);
 
 describe('Test the /api/flights/all route', () => {
