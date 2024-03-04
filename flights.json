@@ -10,183 +10,913 @@
     "price": 300
   },
   {
-    "flightNumber": "XYZ789",
-    "airline": "Airline B",
+    "flightNumber": "INTL001",
+    "airline": "International Airways",
     "destination": "London",
-    "departureTime": "2024-03-02T10:00:00",
-    "arrivalTime": "2024-03-02T15:30:00",
-    "seatAvailability": 120,
+    "departureTime": "2024-03-01T10:00:00",
+    "arrivalTime": "2024-03-01T15:00:00",
+    "seatAvailability": 200,
     "bookedSeats": [],
-    "price": 400
+    "price": 500
   },
   {
-    "flightNumber": "DEF456",
-    "airline": "Airline C",
-    "destination": "Tokyo",
-    "departureTime": "2024-03-03T12:30:00",
-    "arrivalTime": "2024-03-04T02:00:00",
+    "flightNumber": "INTL002",
+    "airline": "Global Airlines",
+    "destination": "Paris",
+    "departureTime": "2024-03-02T12:30:00",
+    "arrivalTime": "2024-03-02T17:30:00",
     "seatAvailability": 180,
     "bookedSeats": [],
     "price": 550
   },
   {
-    "flightNumber": "GHI789",
-    "airline": "Airline D",
-    "destination": "Paris",
-    "departureTime": "2024-03-04T15:45:00",
-    "arrivalTime": "2024-03-04T20:30:00",
-    "seatAvailability": 100,
-    "bookedSeats": [],
-    "price": 350
-  },
-  {
-    "flightNumber": "JKL012",
-    "airline": "Airline E",
-    "destination": "Sydney",
-    "departureTime": "2024-03-05T18:20:00",
-    "arrivalTime": "2024-03-06T08:45:00",
-    "seatAvailability": 200,
+    "flightNumber": "INTL003",
+    "airline": "World Travels",
+    "destination": "Tokyo",
+    "departureTime": "2024-03-03T15:45:00",
+    "arrivalTime": "2024-03-03T21:45:00",
+    "seatAvailability": 220,
     "bookedSeats": [],
     "price": 600
   },
   {
+    "flightNumber": "INTL004",
+    "airline": "GlobeFly Airlines",
+    "destination": "Sydney",
+    "departureTime": "2024-03-04T18:15:00",
+    "arrivalTime": "2024-03-04T23:15:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 520
+  },
+  {
+    "flightNumber": "INTL005",
+    "airline": "Continental Journeys",
+    "destination": "Dubai",
+    "departureTime": "2024-03-05T21:30:00",
+    "arrivalTime": "2024-03-06T02:30:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 580
+  },
+  {
+    "flightNumber": "INTL006",
+    "airline": "SkyWings",
+    "destination": "Shanghai",
+    "departureTime": "2024-03-07T01:45:00",
+    "arrivalTime": "2024-03-07T06:45:00",
+    "seatAvailability": 230,
+    "bookedSeats": [],
+    "price": 620
+  },
+  {
+    "flightNumber": "INTL007",
+    "airline": "AeroGlobal",
+    "destination": "Berlin",
+    "departureTime": "2024-03-08T05:00:00",
+    "arrivalTime": "2024-03-08T10:00:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 550
+  },
+  {
+    "flightNumber": "INTL008",
+    "airline": "Transcontinental Air",
+    "destination": "Rome",
+    "departureTime": "2024-03-09T08:30:00",
+    "arrivalTime": "2024-03-09T13:30:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 570
+  },
+  {
+    "flightNumber": "INTL009",
+    "airline": "Global Explorers",
+    "destination": "Mumbai",
+    "departureTime": "2024-03-10T11:45:00",
+    "arrivalTime": "2024-03-10T16:45:00",
+    "seatAvailability": 240,
+    "bookedSeats": [],
+    "price": 640
+  },
+  {
+    "flightNumber": "INTL010",
+    "airline": "Intercontinental Flights",
+    "destination": "Rio de Janeiro",
+    "departureTime": "2024-03-11T15:15:00",
+    "arrivalTime": "2024-03-11T20:15:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 590
+  },
+  {
+    "flightNumber": "INTL011",
+    "airline": "Pacific Voyages",
+    "destination": "Seoul",
+    "departureTime": "2024-03-12T18:30:00",
+    "arrivalTime": "2024-03-12T23:30:00",
+    "seatAvailability": 230,
+    "bookedSeats": [],
+    "price": 620
+  },
+  {
+    "flightNumber": "INTL012",
+    "airline": "Cosmo Air",
+    "destination": "Cape Town",
+    "departureTime": "2024-03-13T22:00:00",
+    "arrivalTime": "2024-03-14T03:00:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 520
+  },
+  {
+    "flightNumber": "INTL013",
+    "airline": "Atlantic Travels",
+    "destination": "Singapore",
+    "departureTime": "2024-03-15T01:15:00",
+    "arrivalTime": "2024-03-15T06:15:00",
+    "seatAvailability": 220,
+    "bookedSeats": [],
+    "price": 600
+  },
+  {
+    "flightNumber": "INTL014",
+    "airline": "Eurasian Airlines",
+    "destination": "Moscow",
+    "departureTime": "2024-03-16T04:30:00",
+    "arrivalTime": "2024-03-16T09:30:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 550
+  },
+  {
+    "flightNumber": "INTL015",
+    "airline": "World Connectors",
+    "destination": "Hong Kong",
+    "departureTime": "2024-03-17T07:45:00",
+    "arrivalTime": "2024-03-17T12:45:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 570
+  },
+  {
+    "flightNumber": "INTL016",
+    "airline": "Orient Airways",
+    "destination": "Istanbul",
+    "departureTime": "2024-03-18T11:00:00",
+    "arrivalTime": "2024-03-18T16:00:00",
+    "seatAvailability": 240,
+    "bookedSeats": [],
+    "price": 640
+  },
+  {
+    "flightNumber": "INTL017",
+    "airline": "Transatlantic Flights",
+    "destination": "Bangkok",
+    "departureTime": "2024-03-19T14:15:00",
+    "arrivalTime": "2024-03-19T19:15:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 590
+  },
+  {
+    "flightNumber": "INTL018",
+    "airline": "Global Navigators",
+    "destination": "Amsterdam",
+    "departureTime": "2024-03-20T17:30:00",
+    "arrivalTime": "2024-03-20T22:30:00",
+    "seatAvailability": 230,
+    "bookedSeats": [],
+    "price": 620
+  },
+  {
+    "flightNumber": "INTL019",
+    "airline": "Continental Ventures",
+    "destination": "Mexico City",
+    "departureTime": "2024-03-21T20:45:00",
+    "arrivalTime": "2024-03-22T01:45:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 520
+  },
+  {
+    "flightNumber": "INTL020",
+    "airline": "Global Odyssey",
+    "destination": "Toronto",
+    "departureTime": "2024-03-23T00:00:00",
+    "arrivalTime": "2024-03-23T05:00:00",
+    "seatAvailability": 220,
+    "bookedSeats": [],
+    "price": 600
+  },
+  {
+    "flightNumber": "INTL021",
+    "airline": "Aero World",
+    "destination": "Dublin",
+    "departureTime": "2024-03-24T03:15:00",
+    "arrivalTime": "2024-03-24T08:15:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 550
+  },
+  {
+    "flightNumber": "INTL022",
+    "airline": "Global Express",
+    "destination": "Frankfurt",
+    "departureTime": "2024-03-25T06:30:00",
+    "arrivalTime": "2024-03-25T11:30:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 570
+  },
+  {
+    "flightNumber": "INTL023",
+    "airline": "EuroConnections",
+    "destination": "Madrid",
+    "departureTime": "2024-03-26T09:45:00",
+    "arrivalTime": "2024-03-26T14:45:00",
+    "seatAvailability": 240,
+    "bookedSeats": [],
+    "price": 640
+  },
+  {
+    "flightNumber": "INTL024",
+    "airline": "SkyLink Travels",
+    "destination": "Stockholm",
+    "departureTime": "2024-03-27T13:00:00",
+    "arrivalTime": "2024-03-27T18:00:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 590
+  },
+  {
+    "flightNumber": "INTL025",
+    "airline": "Pan-Asia Airlines",
+    "destination": "Vienna",
+    "departureTime": "2024-03-28T16:15:00",
+    "arrivalTime": "2024-03-28T21:15:00",
+    "seatAvailability": 230,
+    "bookedSeats": [],
+    "price": 620
+  },
+  {
+    "flightNumber": "INTL026",
+    "airline": "South Pacific Flyers",
+    "destination": "Cairo",
+    "departureTime": "2024-03-29T19:30:00",
+    "arrivalTime": "2024-03-29T00:30:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 520
+  },
+  {
+    "flightNumber": "INTL027",
+    "airline": "Mideast Connections",
+    "destination": "Athens",
+    "departureTime": "2024-03-30T22:45:00",
+    "arrivalTime": "2024-03-31T03:45:00",
+    "seatAvailability": 220,
+    "bookedSeats": [],
+    "price": 600
+  },
+  {
+    "flightNumber": "INTL028",
+    "airline": "Pacific Gateway",
+    "destination": "Lisbon",
+    "departureTime": "2024-04-01T02:00:00",
+    "arrivalTime": "2024-04-01T07:00:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 550
+  },
+  {
+    "flightNumber": "INTL029",
+    "airline": "Caribbean Explorations",
+    "destination": "Amman",
+    "departureTime": "2024-04-02T05:15:00",
+    "arrivalTime": "2024-04-02T10:15:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 570
+  },
+  {
+    "flightNumber": "INTL030",
+    "airline": "Sunrise Airlines",
+    "destination": "Prague",
+    "departureTime": "2024-04-03T08:30:00",
+    "arrivalTime": "2024-04-03T13:30:00",
+    "seatAvailability": 240,
+    "bookedSeats": [],
+    "price": 640
+  },
+  {
+    "flightNumber": "INTL031",
+    "airline": "Northern Lights Airways",
+    "destination": "Seville",
+    "departureTime": "2024-04-04T11:45:00",
+    "arrivalTime": "2024-04-04T16:45:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 590
+  },
+  {
+    "flightNumber": "INTL032",
+    "airline": "African Skies",
+    "destination": "Nairobi",
+    "departureTime": "2024-04-05T15:00:00",
+    "arrivalTime": "2024-04-05T20:00:00",
+    "seatAvailability": 230,
+    "bookedSeats": [],
+    "price": 620
+  },
+  {
+    "flightNumber": "INTL033",
+    "airline": "South American Ventures",
+    "destination": "Buenos Aires",
+    "departureTime": "2024-04-06T18:15:00",
+    "arrivalTime": "2024-04-06T23:15:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 520
+  },
+  {
+    "flightNumber": "INTL034",
+    "airline": "Asian Horizons",
+    "destination": "Tel Aviv",
+    "departureTime": "2024-04-07T21:30:00",
+    "arrivalTime": "2024-04-08T02:30:00",
+    "seatAvailability": 220,
+    "bookedSeats": [],
+    "price": 600
+  },
+  {
+    "flightNumber": "INTL035",
+    "airline": "EurAsian Connect",
+    "destination": "Bangalore",
+    "departureTime": "2024-04-09T00:45:00",
+    "arrivalTime": "2024-04-09T05:45:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 550
+  },
+  {
+    "flightNumber": "INTL036",
+    "airline": "Global Jetways",
+    "destination": "Copenhagen",
+    "departureTime": "2024-04-10T04:00:00",
+    "arrivalTime": "2024-04-10T09:00:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 570
+  },
+  {
+    "flightNumber": "INTL037",
+    "airline": "Pacific Rim Travels",
+    "destination": "Hanoi",
+    "departureTime": "2024-04-11T07:15:00",
+    "arrivalTime": "2024-04-11T12:15:00",
+    "seatAvailability": 240,
+    "bookedSeats": [],
+    "price": 640
+  },
+  {
+    "flightNumber": "INTL038",
+    "airline": "Middle East Express",
+    "destination": "Zurich",
+    "departureTime": "2024-04-12T10:30:00",
+    "arrivalTime": "2024-04-12T15:30:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 590
+  },
+  {
+    "flightNumber": "INTL039",
+    "airline": "Caribbean Horizons",
+    "destination": "Johannesburg",
+    "departureTime": "2024-04-13T13:45:00",
+    "arrivalTime": "2024-04-13T18:45:00",
+    "seatAvailability": 230,
+    "bookedSeats": [],
+    "price": 620
+  },
+  {
+    "flightNumber": "INTL040",
+    "airline": "Transpacific Wings",
+    "destination": "Lima",
+    "departureTime": "2024-04-14T17:00:00",
+    "arrivalTime": "2024-04-14T22:00:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 520
+  },
+  {
+    "flightNumber": "INTL041",
+    "airline": "European Adventures",
+    "destination": "Istanbul",
+    "departureTime": "2024-04-15T20:15:00",
+    "arrivalTime": "2024-04-16T01:15:00",
+    "seatAvailability": 220,
+    "bookedSeats": [],
+    "price": 600
+  },
+  {
+    "flightNumber": "INTL042",
+    "airline": "South American Expeditions",
+    "destination": "Copenhagen",
+    "departureTime": "2024-04-17T23:30:00",
+    "arrivalTime": "2024-04-18T04:30:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 550
+  },
+  {
+    "flightNumber": "INTL043",
+    "airline": "Asian Odyssey",
+    "destination": "Oslo",
+    "departureTime": "2024-04-19T02:45:00",
+    "arrivalTime": "2024-04-19T07:45:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 570
+  },
+  {
+    "flightNumber": "INTL044",
+    "airline": "Mideast Explorers",
+    "destination": "Rio de Janeiro",
+    "departureTime": "2024-04-20T06:00:00",
+    "arrivalTime": "2024-04-20T11:00:00",
+    "seatAvailability": 240,
+    "bookedSeats": [],
+    "price": 640
+  },
+  {
+    "flightNumber": "INTL045",
+    "airline": "Pan-European Journeys",
+    "destination": "Seoul",
+    "departureTime": "2024-04-21T09:15:00",
+    "arrivalTime": "2024-04-21T14:15:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 590
+  },
+  {
+    "flightNumber": "INTL046",
+    "airline": "Transatlantic Ventures",
+    "destination": "Nairobi",
+    "departureTime": "2024-04-22T12:30:00",
+    "arrivalTime": "2024-04-22T17:30:00",
+    "seatAvailability": 230,
+    "bookedSeats": [],
+    "price": 620
+  },
+  {
+    "flightNumber": "INTL047",
+    "airline": "Pacific Connect",
+    "destination": "Bangkok",
+    "departureTime": "2024-04-23T15:45:00",
+    "arrivalTime": "2024-04-23T20:45:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 520
+  },
+  {
+    "flightNumber": "INTL048",
+    "airline": "Global Discoveries",
+    "destination": "Athens",
+    "departureTime": "2024-04-24T19:00:00",
+    "arrivalTime": "2024-04-24T00:00:00",
+    "seatAvailability": 220,
+    "bookedSeats": [],
+    "price": 600
+  },
+  {
+    "flightNumber": "INTL049",
+    "airline": "Eurasian Odyssey",
+    "destination": "Stockholm",
+    "departureTime": "2024-04-25T22:15:00",
+    "arrivalTime": "2024-04-26T03:15:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 550
+  },
+  {
+    "flightNumber": "DEF456",
+    "airline": "Airline B",
+    "destination": "Los Angeles",
+    "departureTime": "2024-03-02T09:30:00",
+    "arrivalTime": "2024-03-02T13:30:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 350
+  },
+  {
+    "flightNumber": "GHI789",
+    "airline": "Airline C",
+    "destination": "Chicago",
+    "departureTime": "2024-03-03T12:45:00",
+    "arrivalTime": "2024-03-03T16:45:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 400
+  },
+  {
+    "flightNumber": "JKL012",
+    "airline": "Airline D",
+    "destination": "Miami",
+    "departureTime": "2024-03-04T15:15:00",
+    "arrivalTime": "2024-03-04T19:15:00",
+    "seatAvailability": 160,
+    "bookedSeats": [],
+    "price": 320
+  },
+  {
+    "flightNumber": "MNO345",
+    "airline": "Airline E",
+    "destination": "San Francisco",
+    "departureTime": "2024-03-05T18:00:00",
+    "arrivalTime": "2024-03-05T22:00:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 380
+  },
+  {
+    "flightNumber": "PQR678",
+    "airline": "Airline F",
+    "destination": "Seattle",
+    "departureTime": "2024-03-06T21:30:00",
+    "arrivalTime": "2024-03-07T01:30:00",
+    "seatAvailability": 170,
+    "bookedSeats": [],
+    "price": 330
+  },
+  {
     "flightNumber": "STU901",
     "airline": "Airline G",
-    "destination": "Berlin",
-    "departureTime": "2024-03-08T08:45:00",
-    "arrivalTime": "2024-03-08T12:45:00",
-    "seatAvailability": 170,
+    "destination": "Las Vegas",
+    "departureTime": "2024-03-08T05:45:00",
+    "arrivalTime": "2024-03-08T09:45:00",
+    "seatAvailability": 210,
     "bookedSeats": [],
     "price": 420
   },
   {
     "flightNumber": "VWX234",
     "airline": "Airline H",
-    "destination": "Rome",
-    "departureTime": "2024-03-09T14:30:00",
-    "arrivalTime": "2024-03-09T18:30:00",
-    "seatAvailability": 220,
+    "destination": "Boston",
+    "departureTime": "2024-03-09T08:15:00",
+    "arrivalTime": "2024-03-09T12:15:00",
+    "seatAvailability": 150,
     "bookedSeats": [],
-    "price": 470
+    "price": 300
   },
   {
     "flightNumber": "YZA567",
     "airline": "Airline I",
-    "destination": "Toronto",
-    "departureTime": "2024-03-10T18:00:00",
-    "arrivalTime": "2024-03-10T22:00:00",
-    "seatAvailability": 130,
+    "destination": "Denver",
+    "departureTime": "2024-03-10T11:00:00",
+    "arrivalTime": "2024-03-10T15:00:00",
+    "seatAvailability": 180,
     "bookedSeats": [],
-    "price": 390
+    "price": 360
   },
   {
     "flightNumber": "BCD890",
     "airline": "Airline J",
-    "destination": "Hong Kong",
-    "departureTime": "2024-03-11T11:30:00",
-    "arrivalTime": "2024-03-11T15:30:00",
-    "seatAvailability": 240,
-    "bookedSeats": [],
-    "price": 550
-  },
-  {
-    "flightNumber": "EFG123",
-    "airline": "Airline K",
-    "destination": "Mumbai",
-    "departureTime": "2024-03-12T03:45:00",
-    "arrivalTime": "2024-03-12T07:45:00",
-    "seatAvailability": 210,
-    "bookedSeats": [],
-    "price": 480
-  },
-  {
-    "flightNumber": "NOP456",
-    "airline": "Airline FF",
-    "destination": "Bangalore",
-    "departureTime": "2024-04-05T12:30:00",
-    "arrivalTime": "2024-04-05T16:30:00",
-    "seatAvailability": 180,
-    "bookedSeats": [],
-    "price": 420
-  },
-  {
-    "flightNumber": "TUV012",
-    "airline": "Airline HH",
-    "destination": "Prague",
-    "departureTime": "2024-04-07T08:45:00",
-    "arrivalTime": "2024-04-07T12:45:00",
+    "destination": "Dallas",
+    "departureTime": "2024-03-11T14:30:00",
+    "arrivalTime": "2024-03-11T18:30:00",
     "seatAvailability": 200,
-    "bookedSeats": [],
-    "price": 450
-  },
-  {
-    "flightNumber": "WXY345",
-    "airline": "Airline II",
-    "destination": "Oslo",
-    "departureTime": "2024-04-08T13:00:00",
-    "arrivalTime": "2024-04-08T17:00:00",
-    "seatAvailability": 170,
-    "bookedSeats": [],
-    "price": 410
-  },
-  {
-    "flightNumber": "ZAB678",
-    "airline": "Airline JJ",
-    "destination": "Vienna",
-    "departureTime": "2024-04-09T18:30:00",
-    "arrivalTime": "2024-04-09T22:30:00",
-    "seatAvailability": 190,
-    "bookedSeats": [],
-    "price": 480
-  },
-  {
-    "flightNumber": "BCD901",
-    "airline": "Airline KK",
-    "destination": "Madrid",
-    "departureTime": "2024-04-10T04:15:00",
-    "arrivalTime": "2024-04-10T08:15:00",
-    "seatAvailability": 220,
-    "bookedSeats": [],
-    "price": 460
-  },
-  {
-    "flightNumber": "EFG234",
-    "airline": "Airline LL",
-    "destination": "Helsinki",
-    "departureTime": "2024-04-11T10:00:00",
-    "arrivalTime": "2024-04-11T14:00:00",
-    "seatAvailability": 160,
-    "bookedSeats": [],
-    "price": 390
-  },
-  {
-    "flightNumber": "HIJ567",
-    "airline": "Airline MM",
-    "destination": "Edinburgh",
-    "departureTime": "2024-04-12T15:45:00",
-    "arrivalTime": "2024-04-12T19:45:00",
-    "seatAvailability": 240,
-    "bookedSeats": [],
-    "price": 510
-  },
-  {
-    "flightNumber": "KLM890",
-    "airline": "Airline NN",
-    "destination": "Budapest",
-    "departureTime": "2024-04-13T21:30:00",
-    "arrivalTime": "2024-04-14T01:30:00",
-    "seatAvailability": 130,
     "bookedSeats": [],
     "price": 400
   },
   {
-    "flightNumber": "NOP123",
-    "airline": "Airline OO",
-    "destination": "Warsaw",
-    "departureTime": "2024-04-15T02:45:00",
-    "arrivalTime": "2024-04-15T06:45:00",
+    "flightNumber": "EFG123",
+    "airline": "Airline K",
+    "destination": "Houston",
+    "departureTime": "2024-03-12T17:45:00",
+    "arrivalTime": "2024-03-12T21:45:00",
+    "seatAvailability": 160,
+    "bookedSeats": [],
+    "price": 320
+  },
+  {
+    "flightNumber": "HIJ456",
+    "airline": "Airline L",
+    "destination": "Atlanta",
+    "departureTime": "2024-03-13T20:15:00",
+    "arrivalTime": "2024-03-14T00:15:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 380
+  },
+  {
+    "flightNumber": "KLM789",
+    "airline": "Airline M",
+    "destination": "Phoenix",
+    "departureTime": "2024-03-15T23:30:00",
+    "arrivalTime": "2024-03-16T03:30:00",
+    "seatAvailability": 170,
+    "bookedSeats": [],
+    "price": 330
+  },
+  {
+    "flightNumber": "NOP012",
+    "airline": "Airline N",
+    "destination": "Orlando",
+    "departureTime": "2024-03-17T03:45:00",
+    "arrivalTime": "2024-03-17T07:45:00",
     "seatAvailability": 210,
     "bookedSeats": [],
-    "price": 440
+    "price": 420
+  },
+  {
+    "flightNumber": "QRS345",
+    "airline": "Airline O",
+    "destination": "Philadelphia",
+    "departureTime": "2024-03-18T06:15:00",
+    "arrivalTime": "2024-03-18T10:15:00",
+    "seatAvailability": 150,
+    "bookedSeats": [],
+    "price": 300
+  },
+  {
+    "flightNumber": "TUV678",
+    "airline": "Airline P",
+    "destination": "Detroit",
+    "departureTime": "2024-03-19T09:00:00",
+    "arrivalTime": "2024-03-19T13:00:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 360
+  },
+  {
+    "flightNumber": "VWX901",
+    "airline": "Airline Q",
+    "destination": "Minneapolis",
+    "departureTime": "2024-03-20T12:30:00",
+    "arrivalTime": "2024-03-20T16:30:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 400
+  },
+  {
+    "flightNumber": "YZA234",
+    "airline": "Airline R",
+    "destination": "San Diego",
+    "departureTime": "2024-03-21T15:45:00",
+    "arrivalTime": "2024-03-21T19:45:00",
+    "seatAvailability": 160,
+    "bookedSeats": [],
+    "price": 320
+  },
+  {
+    "flightNumber": "BCD567",
+    "airline": "Airline S",
+    "destination": "Tampa",
+    "departureTime": "2024-03-22T18:00:00",
+    "arrivalTime": "2024-03-22T22:00:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 380
+  },
+  {
+    "flightNumber": "EFG890",
+    "airline": "Airline T",
+    "destination": "Charlotte",
+    "departureTime": "2024-03-23T21:30:00",
+    "arrivalTime": "2024-03-24T01:30:00",
+    "seatAvailability": 170,
+    "bookedSeats": [],
+    "price": 330
+  },
+  {
+    "flightNumber": "HIJ123",
+    "airline": "Airline U",
+    "destination": "St. Louis",
+    "departureTime": "2024-03-25T05:45:00",
+    "arrivalTime": "2024-03-25T09:45:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 420
+  },
+  {
+    "flightNumber": "KLM456",
+    "airline": "Airline V",
+    "destination": "Portland",
+    "departureTime": "2024-03-26T08:15:00",
+    "arrivalTime": "2024-03-26T12:15:00",
+    "seatAvailability": 150,
+    "bookedSeats": [],
+    "price": 300
+  },
+  {
+    "flightNumber": "NOP789",
+    "airline": "Airline W",
+    "destination": "Cleveland",
+    "departureTime": "2024-03-27T11:00:00",
+    "arrivalTime": "2024-03-27T15:00:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 360
+  },
+  {
+    "flightNumber": "QRS012",
+    "airline": "Airline X",
+    "destination": "Kansas City",
+    "departureTime": "2024-03-28T14:30:00",
+    "arrivalTime": "2024-03-28T18:30:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 400
+  },
+  {
+    "flightNumber": "TUV345",
+    "airline": "Airline Y",
+    "destination": "Raleigh",
+    "departureTime": "2024-03-29T17:45:00",
+    "arrivalTime": "2024-03-29T21:45:00",
+    "seatAvailability": 160,
+    "bookedSeats": [],
+    "price": 320
+  },
+  {
+    "flightNumber": "VWX678",
+    "airline": "Airline Z",
+    "destination": "Indianapolis",
+    "departureTime": "2024-03-30T20:15:00",
+    "arrivalTime": "2024-03-31T00:15:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 380
+  },
+  {
+    "flightNumber": "YZA901",
+    "airline": "Airline AA",
+    "destination": "Salt Lake City",
+    "departureTime": "2024-04-01T23:30:00",
+    "arrivalTime": "2024-04-02T03:30:00",
+    "seatAvailability": 170,
+    "bookedSeats": [],
+    "price": 330
+  },
+  {
+    "flightNumber": "BCD234",
+    "airline": "Airline BB",
+    "destination": "Columbus",
+    "departureTime": "2024-04-03T03:45:00",
+    "arrivalTime": "2024-04-03T07:45:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 420
+  },
+  {
+    "flightNumber": "EFG567",
+    "airline": "Airline CC",
+    "destination": "New Orleans",
+    "departureTime": "2024-04-04T06:15:00",
+    "arrivalTime": "2024-04-04T10:15:00",
+    "seatAvailability": 150,
+    "bookedSeats": [],
+    "price": 300
+  },
+  {
+    "flightNumber": "HIJ890",
+    "airline": "Airline DD",
+    "destination": "Austin",
+    "departureTime": "2024-04-05T09:00:00",
+    "arrivalTime": "2024-04-05T13:00:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 360
+  },
+  {
+    "flightNumber": "KLM123",
+    "airline": "Airline EE",
+    "destination": "Nashville",
+    "departureTime": "2024-04-06T12:30:00",
+    "arrivalTime": "2024-04-06T16:30:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 400
+  },
+  {
+    "flightNumber": "NOP456",
+    "airline": "Airline FF",
+    "destination": "Memphis",
+    "departureTime": "2024-04-07T15:45:00",
+    "arrivalTime": "2024-04-07T19:45:00",
+    "seatAvailability": 160,
+    "bookedSeats": [],
+    "price": 320
+  },
+  {
+    "flightNumber": "QRS789",
+    "airline": "Airline GG",
+    "destination": "Louisville",
+    "departureTime": "2024-04-08T18:00:00",
+    "arrivalTime": "2024-04-08T22:00:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 380
+  },
+  {
+    "flightNumber": "TUV012",
+    "airline": "Airline HH",
+    "destination": "Milwaukee",
+    "departureTime": "2024-04-09T21:30:00",
+    "arrivalTime": "2024-04-10T01:30:00",
+    "seatAvailability": 170,
+    "bookedSeats": [],
+    "price": 330
+  },
+  {
+    "flightNumber": "VWX345",
+    "airline": "Airline II",
+    "destination": "Oklahoma City",
+    "departureTime": "2024-04-11T05:45:00",
+    "arrivalTime": "2024-04-11T09:45:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 420
+  },
+  {
+    "flightNumber": "YZA678",
+    "airline": "Airline JJ",
+    "destination": "Hartford",
+    "departureTime": "2024-04-12T08:15:00",
+    "arrivalTime": "2024-04-12T12:15:00",
+    "seatAvailability": 150,
+    "bookedSeats": [],
+    "price": 300
+  },
+  {
+    "flightNumber": "BCD901",
+    "airline": "Airline KK",
+    "destination": "Baltimore",
+    "departureTime": "2024-04-13T11:00:00",
+    "arrivalTime": "2024-04-13T15:00:00",
+    "seatAvailability": 180,
+    "bookedSeats": [],
+    "price": 360
+  },
+  {
+    "flightNumber": "EFG234",
+    "airline": "Airline LL",
+    "destination": "Buffalo",
+    "departureTime": "2024-04-14T14:30:00",
+    "arrivalTime": "2024-04-14T18:30:00",
+    "seatAvailability": 200,
+    "bookedSeats": [],
+    "price": 400
+  },
+  {
+    "flightNumber": "HIJ567",
+    "airline": "Airline MM",
+    "destination": "Pittsburgh",
+    "departureTime": "2024-04-15T17:45:00",
+    "arrivalTime": "2024-04-15T21:45:00",
+    "seatAvailability": 160,
+    "bookedSeats": [],
+    "price": 320
+  },
+  {
+    "flightNumber": "KLM890",
+    "airline": "Airline NN",
+    "destination": "Cincinnati",
+    "departureTime": "2024-04-16T20:15:00",
+    "arrivalTime": "2024-04-16T00:15:00",
+    "seatAvailability": 190,
+    "bookedSeats": [],
+    "price": 380
+  },
+  {
+    "flightNumber": "NOP123",
+    "airline": "Airline OO",
+    "destination": "Richmond",
+    "departureTime": "2024-04-17T23:30:00",
+    "arrivalTime": "2024-04-18T03:30:00",
+    "seatAvailability": 170,
+    "bookedSeats": [],
+    "price": 330
+  },
+  {
+    "flightNumber": "QRS456",
+    "airline": "Airline PP",
+    "destination": "Albuquerque",
+    "departureTime": "2024-04-19T03:45:00",
+    "arrivalTime": "2024-04-19T07:45:00",
+    "seatAvailability": 210,
+    "bookedSeats": [],
+    "price": 420
+  },
+  {
+    "flightNumber": "TUV789",
+    "airline": "Airline QQ",
+    "destination": "Birmingham",
+    "departureTime": "2024-04-20T06:15:00",
+    "arrivalTime": "2024-04-20T10:15:00",
+    "seatAvailability": 150,
+    "bookedSeats": [],
+    "price": 300
   }
 ]
