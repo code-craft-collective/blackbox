@@ -7,7 +7,7 @@ require('dotenv').config();
 
 jest.mock('../models/Flight.model');
 
-jest.setTimeout(10000); // 10 seconds
+// jest.setTimeout(10000); // 10 seconds
 
 const mockFlights = [
   {
