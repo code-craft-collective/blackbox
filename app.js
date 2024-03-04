@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -5,9 +6,6 @@ const cors = require('cors');
 
 // to use .env file
 require('dotenv').config();
-
-// all the db related code is moved to db.js
-const db = require('./db');
 
 // services for flights and user
 const flightRoutes = require('./services/flights');
@@ -17,9 +15,6 @@ const authRoutes = require('./routes/auth.routes');
 const PORT = process.env.PORT || 5005;
 
 const app = express();
-
-// Connect to the database
-db.connect();
 
 // MIDDLEWARE
 // Research Team - Set up CORS middleware here:
@@ -47,16 +42,7 @@ app.use('/auth', authRoutes);
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err);
-  res.status(500).json({ error: 'Internal Server Error' });
+  res.status(404).json({ error: 'Not found' });
 });
 
-let server;
-
-// port where server is running
-if (process.env.NODE_ENV !== 'test') {
-  server = server.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
-}
-
-module.exports = server;
+module.exports = app;

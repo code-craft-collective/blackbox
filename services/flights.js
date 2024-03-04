@@ -9,7 +9,7 @@ const router = express.Router();
 const Flight = require('../models/Flight.model');
 
 // this is the mock data we are using
-const flightJson = require('../flights.json');
+// const flightJson = require('../flights.json');
 
 router.get('/all', async (req, res) => {
   try {

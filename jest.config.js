@@ -1,4 +1,6 @@
 module.exports = {
+  globalSetup: '<rootDir>/testSetup/jest.global-setup.js',
+  globalTeardown: '<rootDir>/testSetup/jest.global-teardown.js',
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
   // Indicates which provider should be used to instrument code for coverage
@@ -14,4 +16,5 @@ module.exports = {
   transform: {
     '^.+\\.m?js$': 'babel-jest',
   },
+  testTimeout: 30000,
 };
