@@ -30,7 +30,7 @@ jobs:
       - name: Run Tests
         run: |
           echo "Running Tests"
-          npm test
+          npm test -- --verbose
         env:
           DEBUG: '*' # Enable debugging output
 
