@@ -21,7 +21,6 @@ router.get('/all', async (req, res) => {
     // we are using the json file to get the mock data
     // res.status(200).json(flightJson);
   } catch (error) {
-    console.error('Error fetching flights:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
@@ -32,7 +31,6 @@ router.get('/destination', async (req, res) => {
 
     res.status(200).json(flights);
   } catch (error) {
-    console.error('Error fetching flights:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
@@ -42,7 +40,6 @@ router.get('/airline', async (req, res) => {
     const flights = await Flight.find({}).select('airline');
     res.status(200).json(flights);
   } catch (error) {
-    console.error('Error fetching flights:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
@@ -52,7 +49,6 @@ router.get('/price', async (req, res) => {
     const flights = await Flight.find({}).select('price');
     res.status(200).json(flights);
   } catch (error) {
-    console.error('Error fetching flights:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
@@ -62,7 +58,6 @@ router.get('/departureTime', async (req, res) => {
     const flights = await Flight.find({}).select('departureTime');
     res.status(200).json(flights);
   } catch (error) {
-    console.error('Error fetching flights:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
@@ -72,7 +67,6 @@ router.get('/arrivalTime', async (req, res) => {
     const flights = await Flight.find({}).select('arrivalTime');
     res.status(200).json(flights);
   } catch (error) {
-    console.error('Error fetching flights:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
