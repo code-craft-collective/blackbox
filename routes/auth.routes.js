@@ -8,7 +8,7 @@ const saltRounds = 10;
 
 router.post('/signup', (req, res, next) => {
   const { email, password, name } = req.body;
-
+  console.log(req.body);
   if (email === '' || password === '' || name === '') {
     res.status(400).json({ message: 'Provide email, password and name' });
     return;
