@@ -12,6 +12,4 @@ async function teardown() {
   }
 }
 
-module.exports = async () => {
-  await teardown();
-};
+module.exports = teardown;

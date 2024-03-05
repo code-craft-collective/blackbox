@@ -2,19 +2,21 @@ const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+
 require('dotenv').config();
 
 const flightRoutes = require('./services/flights');
 const userRoutes = require('./services/users');
 const authRoutes = require('./routes/auth.routes');
 
-const PORT = process.env.PORT || 5005;
-
 const app = express();
 
+// localhost:5173 because the React app is running on port 5173
+// if the frontend server is not on port 5173 then cors have to be changed too
 app.use(
   cors({
     origin: ['http://localhost:5173'],
+    credentials: true,
   })
 );
 

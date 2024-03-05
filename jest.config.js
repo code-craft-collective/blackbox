@@ -16,5 +16,4 @@ module.exports = {
   transform: {
     '^.+\\.m?js$': 'babel-jest',
   },
-  testTimeout: 30000,
 };
