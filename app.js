@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -20,6 +21,9 @@ app.use(
   })
 );
 
+// MIDDLEWARE
+// Research Team - Set up CORS middleware here:
+// ...
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.static('public'));
