@@ -1,10 +1,13 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+
 const User = require('../models/User.model');
-const { isAuthenticated } = require('../middleware/jwt.middleware');
+
 const router = express.Router();
 const saltRounds = 10;
+
+const { isAuthenticated } = require('../middleware/jwt.middleware');
 
 router.post('/signup', (req, res, next) => {
   const { email, password, name } = req.body;

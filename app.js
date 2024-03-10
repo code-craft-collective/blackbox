@@ -8,6 +8,8 @@ require('dotenv').config();
 
 const flightRoutes = require('./services/flights');
 const userRoutes = require('./services/users');
+const ticketRoutes = require('./services/tickets');
+
 const authRoutes = require('./routes/auth.routes');
 
 const app = express();
@@ -36,6 +38,8 @@ app.get('/', (req, res) => {
 
 app.use('/api/flights', flightRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/tickets', ticketRoutes);
+
 app.use('/auth', authRoutes);
 
 app.use((err, req, res, next) => {
