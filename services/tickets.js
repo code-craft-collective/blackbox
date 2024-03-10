@@ -8,7 +8,7 @@ const { isAuthenticated } = require('../middleware/jwt.middleware');
 
 router.post('/purchase', async (req, res, next) => {
   const { flightNumber, departure, arrival, user } = req.body;
-  //   const user = req.user._id;
+  // const user = req.user._id;
 
   try {
     const ticket = await Ticket.create({
@@ -31,3 +31,5 @@ router.get('/history-tickets', async (req, res, next) => {
     res.status(500).json({ message: 'Error getting all tickets' });
   }
 });
+
+module.exports = router;

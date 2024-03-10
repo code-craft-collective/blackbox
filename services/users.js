@@ -49,6 +49,7 @@ router.get('/bio', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 router.get('/image', async (req, res) => {
   try {
     const users = await User.find({}).select('image');
@@ -60,7 +61,7 @@ router.get('/image', async (req, res) => {
   }
 });
 
-router.patch('edit/:id', async (req, res) => {
+router.patch('/edit/:id', async (req, res) => {
   const { id } = req.params;
   const { name, email } = req.body;
 
@@ -81,10 +82,10 @@ router.patch('edit/:id', async (req, res) => {
 
     await user.save();
 
-    res.status(200).json(user);
+    return res.status(200).json(user);
   } catch (error) {
     console.log('Error updating user: ', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
