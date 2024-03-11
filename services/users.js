@@ -1,4 +1,5 @@
 const express = require('express');
+
 const router = express.Router();
 
 const User = require('../models/User.model');
@@ -48,6 +49,7 @@ router.get('/bio', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 router.get('/image', async (req, res) => {
   try {
     const users = await User.find({}).select('image');
@@ -56,6 +58,34 @@ router.get('/image', async (req, res) => {
   } catch (error) {
     console.error('Error fetching users image:', error);
     res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+router.patch('/edit/:id', async (req, res) => {
+  const { id } = req.params;
+  const { name, email } = req.body;
+
+  try {
+    const user = await User.findById(id);
+
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+
+    if (name) {
+      user.name = name;
+    }
+
+    if (email) {
+      user.email = email;
+    }
+
+    await user.save();
+
+    return res.status(200).json(user);
+  } catch (error) {
+    console.log('Error updating user: ', error);
+    return res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
