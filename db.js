@@ -4,10 +4,12 @@ require('dotenv').config();
 
 const nameOfDatabase = 'Plane';
 
+const mongoURI = 'mongodb+srv://marie:blackbox@cluster0.imcivfc.mongodb.net/';
+
 async function connect() {
   try {
     // await mongoose.connect(`mongodb://localhost:27017/${nameOfDatabase}`, {});
-    await mongoose.connect(process.env.MONGO_URI + nameOfDatabase, {
+    await mongoose.connect(mongoURI + nameOfDatabase, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
