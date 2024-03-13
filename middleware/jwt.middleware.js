@@ -1,6 +1,6 @@
 const { expressjwt: jwt } = require('express-jwt');
 
-const secretToken = process.env.TOKEN_SECRET || '1r0Nh4cK';
+const secretToken = process.env.TOKEN_SECRET;
 
 function getTokenFromHeaders(req) {
   if (
