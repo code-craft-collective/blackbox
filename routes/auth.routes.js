@@ -9,7 +9,7 @@ const saltRounds = 10;
 
 const { isAuthenticated } = require('../middleware/jwt.middleware');
 
-const secretToken = process.env.TOKEN_SECRET;
+const secretToken = process.env.TOKEN_SECRET || '1r0Nh4cK';
 
 router.post('/signup', (req, res, next) => {
   const { email, password, name } = req.body;
