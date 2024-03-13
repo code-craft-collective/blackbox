@@ -7,18 +7,20 @@ const Ticket = require('../models/Ticket.model');
 const { isAuthenticated } = require('../middleware/jwt.middleware');
 
 router.post('/purchase', async (req, res, next) => {
-  const { flightNumber, departure, arrival, user } = req.body;
-  // const user = req.user._id;
+  const { tickets, userId } = req.body;
+  console.log('REQ', req.body);
+  const ticketsWithUser = tickets.map((ticket) => ({
+    ...ticket,
+    user: userId,
+  }));
+
+  // console.log(ticketsWithUser);
 
   try {
-    const ticket = await Ticket.create({
-      user,
-      flightNumber,
-      departure,
-      arrival,
-    });
-    res.status(201).json({ ticket });
+    const newTickets = await Ticket.insertMany(ticketsWithUser);
+    res.status(201).json({ newTickets });
   } catch (err) {
+    console.log('error new tickets', err);
     res.status(500).json({ message: 'Error creating ticket' });
   }
 });
