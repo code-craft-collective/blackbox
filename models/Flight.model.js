@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 // flight is suitable name than plane
 const flightSchema = new Schema({
-  flightNumber: Number,
+  flightNumber: String,
   airline: String,
   departure: String,
   destination: String,

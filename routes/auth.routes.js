@@ -1,10 +1,15 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+
 const User = require('../models/User.model');
-const { isAuthenticated } = require('../middleware/jwt.middleware');
+
 const router = express.Router();
 const saltRounds = 10;
+
+const { isAuthenticated } = require('../middleware/jwt.middleware');
+
+const secretToken = process.env.TOKEN_SECRET;
 
 router.post('/signup', (req, res, next) => {
   const { email, password, name } = req.body;
@@ -66,7 +71,7 @@ router.post('/login', (req, res, next) => {
       if (passwordCorrect) {
         const { _id, email, name } = foundUser;
         const payload = { _id, email, name };
-        const authToken = jwt.sign(payload, process.env.TOKEN_SECRET, {
+        const authToken = jwt.sign(payload, secretToken, {
           algorithm: 'HS256',
           expiresIn: '6h',
         });
