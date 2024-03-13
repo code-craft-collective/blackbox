@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const nameOfDatabase = 'Plane';
 
-const mongoURI = 'mongodb+srv://marie:blackbox@cluster0.imcivfc.mongodb.net/';
+const mongoURI = process.env.MONGO_URI;
 
 async function connect() {
   try {

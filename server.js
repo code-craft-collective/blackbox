@@ -7,8 +7,6 @@ const db = require('./db');
 
 const PORT = process.env.PORT || 5005;
 
-const production = process.env.PRODUCTION;
-
 // Connect to the database
 db.connect();
 
@@ -17,6 +15,6 @@ db.connect();
 //   console.log(`Server is running on port ${PORT}`);
 // });
 
-app.listen(production, () => {
-  console.log(`Server is running on url: ${production}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on url: ${PORT}`);
 });

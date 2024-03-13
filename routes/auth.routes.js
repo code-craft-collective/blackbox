@@ -9,7 +9,7 @@ const saltRounds = 10;
 
 const { isAuthenticated } = require('../middleware/jwt.middleware');
 
-const secretToken = process.env.TOKEN_SECRET || '1r0Nh4cK';
+const secretToken = process.env.TOKEN_SECRET;
 
 router.post('/signup', (req, res, next) => {
   const { email, password, name } = req.body;
@@ -76,7 +76,7 @@ router.post('/login', (req, res, next) => {
           expiresIn: '6h',
         });
 
-        res.status(200).json({ authToken: authToken });
+        res.status(200).json({ authToken });
       } else {
         res.status(401).json({ message: 'Unable to authenticate the user' });
       }
