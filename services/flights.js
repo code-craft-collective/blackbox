@@ -21,6 +21,7 @@ router.get('/all', async (req, res) => {
     // we are using the json file to get the mock data
     // res.status(200).json(flightJson);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
