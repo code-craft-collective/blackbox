@@ -31,6 +31,7 @@ router.post('/signup', (req, res, next) => {
     });
     return;
   }
+
   User.findOne({ email })
     .then((foundUser) => {
       if (foundUser) {
@@ -61,6 +62,7 @@ router.post('/login', (req, res, next) => {
     res.status(400).json({ message: 'Provide email and passowrd' });
     return;
   }
+
   User.findOne({ email })
     .then((foundUser) => {
       if (!foundUser) {
@@ -87,6 +89,21 @@ router.post('/login', (req, res, next) => {
 router.get('/verify', isAuthenticated, (req, res, next) => {
   console.log(`req.payload`, req.payload);
   res.status(200).json(req.payload);
+});
+
+router.put('/edit/:id', isAuthenticated, (req, res, next) => {
+  const { id } = req.params;
+  const { name, email } = req.body;
+
+  try {
+    User.findByIdAndUpdate(id, { name, email }, { new: true }).then(
+      (updatedUser) => {
+        res.status(200).json(updatedUser);
+      }
+    );
+  } catch (error) {
+    res.status(500).json({ message: 'Internal server error' });
+  }
 });
 
 module.exports = router;
