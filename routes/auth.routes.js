@@ -86,24 +86,39 @@ router.post('/login', (req, res, next) => {
     .catch((err) => res.status(500).json({ message: 'Internal Server Error' }));
 });
 
-router.get('/verify', isAuthenticated, (req, res, next) => {
-  console.log(`req.payload`, req.payload);
-  res.status(200).json(req.payload);
-});
-
 router.put('/edit/:id', isAuthenticated, (req, res, next) => {
   const { id } = req.params;
   const { name, email } = req.body;
 
-  try {
-    User.findByIdAndUpdate(id, { name, email }, { new: true }).then(
-      (updatedUser) => {
-        res.status(200).json(updatedUser);
-      }
-    );
-  } catch (error) {
-    res.status(500).json({ message: 'Internal server error' });
+  if (email === '' || name === '') {
+    res.status(400).json({ message: 'Provide email and name' });
+    return;
   }
+
+  User.findByIdAndUpdate(id, { name, email }, { new: true })
+    .then((updatedUser) => {
+      console.log('updatedUSER', updatedUser);
+      if (!updatedUser) {
+        return res.status(404).json({ message: 'User Not Found' });
+      }
+
+      const { _id, email, name } = updatedUser;
+      const payload = { _id, email, name };
+      const authToken = jwt.sign(payload, secretToken, {
+        algorithm: 'HS256',
+        expiresIn: '6h',
+      });
+
+      res.status(200).json(authToken);
+    })
+    .catch((error) => {
+      res.status(500).json({ message: 'Internal server error' });
+    });
+});
+
+router.get('/verify', isAuthenticated, (req, res, next) => {
+  console.log(`req.payload`, req.payload);
+  res.status(200).json(req.payload);
 });
 
 module.exports = router;
