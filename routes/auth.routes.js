@@ -11,7 +11,7 @@ const { isAuthenticated } = require('../middleware/jwt.middleware');
 
 const secretToken = process.env.TOKEN_SECRET;
 
-router.post('/signup', (req, res, next) => {
+router.post('/signup', (req, res) => {
   const { email, password, name } = req.body;
   if (email === '' || password === '' || name === '') {
     res.status(400).json({ message: 'Provide email, password and name' });
@@ -97,7 +97,6 @@ router.put('/edit/:id', isAuthenticated, (req, res, next) => {
 
   User.findByIdAndUpdate(id, { name, email }, { new: true })
     .then((updatedUser) => {
-      console.log('updatedUSER', updatedUser);
       if (!updatedUser) {
         return res.status(404).json({ message: 'User Not Found' });
       }
