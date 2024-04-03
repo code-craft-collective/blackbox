@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-// flight is suitable name than plane
 const flightSchema = new Schema({
   flightNumber: String,
   airline: String,
