@@ -18,7 +18,11 @@ const app = express();
 // if the frontend server is not on port 5173 then cors have to be changed too
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://spectrumflightsapp.netlify.app'],
+    origin: [
+      'http://localhost:5173',
+      'https://spectrumflightsapp.netlify.app',
+      'https://bookflight-spectrum.netlify.app/',
+    ],
     credentials: true,
   })
 );
