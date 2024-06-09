@@ -21,7 +21,7 @@ app.use(
     origin: [
       'http://localhost:5173',
       'https://spectrumflightsapp.netlify.app',
-      'https://bookflight-spectrum.netlify.app/',
+      'https://bookflight-spectrum.netlify.app',
     ],
     credentials: true,
   })
@@ -40,6 +40,7 @@ app.get('/', (req, res) => {
   res.send('Hello, this is your Express server!');
 });
 
+app.options('*', cors());
 app.use('/api/flights', flightRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/tickets', ticketRoutes);
