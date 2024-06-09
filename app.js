@@ -21,7 +21,7 @@ app.use(
     origin: [
       'http://localhost:5173',
       'https://spectrumflightsapp.netlify.app',
-      'https://bookflight-spectrum.netlify.app/',
+      'https://bookflight-spectrum.netlify.app',
     ],
     credentials: true,
   })
