@@ -40,6 +40,7 @@ app.get('/', (req, res) => {
   res.send('Hello, this is your Express server!');
 });
 
+app.options('*', cors());
 app.use('/api/flights', flightRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/tickets', ticketRoutes);
